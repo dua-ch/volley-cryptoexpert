@@ -10,6 +10,7 @@ import { Dropdown } from "../data/Dropdown";
 
 const Swap = () => {
   const [Limit, setLimit] = useState(25);
+  const [showFields, setshowFields] = useState("market");
   const [selectToken, setselectToken] = useState(false);
   const [selectItem, setselectItem] = useState("Ethereum");
 
@@ -36,8 +37,22 @@ const Swap = () => {
       </div>
       <div className="flex items-end justify-between font-poppins pt-4 pb-3 flex-wrap xl:flex-nowrap">
         <div className="flex items-center  space-x-[5px]">
-          <button className="text-primary font-bold text-[12px]">Market</button>
-          <button className="text-primary font-medium text-[12px]">Limit</button>
+          <button
+            className={
+              showFields === "market" ? "text-primary font-bold text-[12px]" : "text-primary font-medium text-[12px]"
+            }
+            onClick={() => setshowFields("market")}
+          >
+            Market
+          </button>
+          <button
+            className={
+              showFields === "limit" ? "text-primary font-bold text-[12px]" : "text-primary font-medium text-[12px]"
+            }
+            onClick={() => setshowFields("limit")}
+          >
+            Limit
+          </button>
           <button
             className={
               Limit === 25
@@ -130,7 +145,11 @@ const Swap = () => {
           </div>
         </button>
       </div>
-      <div className="flex items-center justify-center my-6">
+      <div
+        className={
+          showFields === "limit" ? "flex items-center justify-center my-1" : "flex items-center justify-center my-6"
+        }
+      >
         <button>
           <img src={arrows} alt="arrows" />
         </button>
@@ -148,15 +167,33 @@ const Swap = () => {
           </div>
         </button>
       </div>
+      {showFields === "limit" && (
+        <div className="border-2 border-primarygreen rounded-lg bg-[#F3F8FF] relative flex items-center justify-between pt-5 px-4 pb-3 mt-2">
+          <span className="text-[#757575] text-[10px] font-poppins font-normal inline-block leading-3 absolute top-2 left-3">
+            Price
+          </span>
+          <span className="text-[#757575] text-[12px] font-roboto font-normal inline-block leading-3 absolute top-2 right-4">
+            22.173
+          </span>
+          <input type="text" className="font-roboto outline-none border-none bg-transparent w-1/2 lg:w-2/3" />
+          <span className="font-poppins font-semibold text-black text-sm text-right block w-1/2">
+            {tokenFrom.token} Per {tokenTo.token}
+          </span>
+        </div>
+      )}
 
       <button
-        className="bg-primary flex items-center justify-center font-poppins rounded-xl text-white w-full space-x-3 py-4 mt-8"
+        className={
+          showFields === "limit"
+            ? "bg-primary flex items-center justify-center font-poppins rounded-xl text-white w-full space-x-3 py-4 mt-2 mb-1"
+            : "bg-primary flex items-center justify-center font-poppins rounded-xl text-white w-full space-x-3 py-4 mt-8 mb-2"
+        }
         onClick={handleconnectWallet}
       >
         <img src={accountwallet} alt="accountwallet" />
         <span>Connect Wallet</span>
       </button>
-      <span className="font-poppins font-medium text-sm text-primary inline-block pt-3">Refferal:</span>
+      <span className="font-poppins font-medium text-sm text-primary inline-block">Refferal:</span>
       <div className="relative flex items-center border border-primarygreen rounded-xl px-3 py-[10px] space-x-3">
         <input
           type="text"
