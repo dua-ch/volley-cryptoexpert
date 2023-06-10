@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useToggle } from "../context/AppContext";
 
 const AboutAside = () => {
-  const [activeTab, setactiveTab] = useState("swap");
+  const { activeTab, handlesetactiveTab } = useToggle();
   return (
     <div className="lg:sticky lg:top-4 border-2 border-primarygreen flex justify-between items-center py-5 px-4 rounded-2xl sm:space-x-6 mb-4 lg:mb-0 lg:flex-col sm:justify-around sm:py-8  lg:justify-center lg:space-y-6 lg:space-x-0">
       <button
@@ -10,7 +10,7 @@ const AboutAside = () => {
             ? "bg-primary pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
             : "pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
         }
-        onClick={() => setactiveTab("swap")}
+        onClick={() => handlesetactiveTab("swap")}
       >
         <svg width="20" height="20" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -34,7 +34,7 @@ const AboutAside = () => {
             ? "bg-primary pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
             : "pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
         }
-        onClick={() => setactiveTab("bot")}
+        onClick={() => handlesetactiveTab("bot")}
       >
         <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -58,7 +58,7 @@ const AboutAside = () => {
             ? "bg-primary pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
             : "pb-[8px] pt-[12px] px-5 border-4 border-primarygreen rounded-xl flex flex-col items-center justify-center space-y-1"
         }
-        onClick={() => setactiveTab("info")}
+        onClick={() => handlesetactiveTab("info")}
       >
         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

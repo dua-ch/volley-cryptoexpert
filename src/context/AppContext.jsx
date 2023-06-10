@@ -12,6 +12,7 @@ const AppContext = ({ children }) => {
   const [tokenModal, settokenModal] = useState(false);
   const [tokenModal2, settokenModal2] = useState(false);
   const [connectWallet, setconnectWallet] = useState(false);
+  const [activeTab, setactiveTab] = useState("swap");
 
   const [tokenFrom, settokenFrom] = useState({ token: "BNB", tokenImg: BinanceCoin });
   const [tokenTo, settokenTo] = useState({ token: "AAVE", tokenImg: AAVE });
@@ -24,6 +25,9 @@ const AppContext = ({ children }) => {
   };
   const handleconnectWallet = () => {
     setconnectWallet(!connectWallet);
+  };
+  const handlesetactiveTab = (tab) => {
+    setactiveTab(tab);
   };
 
   const handlesettokenFrom = (token, img) => {
@@ -41,11 +45,13 @@ const AppContext = ({ children }) => {
         handleconnectWallet,
         handlesettokenFrom,
         handlesettokenTo,
+        handlesetactiveTab,
         tokenModal,
         tokenModal2,
         connectWallet,
         tokenFrom,
         tokenTo,
+        activeTab,
       }}
     >
       {children}
