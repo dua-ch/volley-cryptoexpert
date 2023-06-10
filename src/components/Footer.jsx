@@ -15,10 +15,23 @@ const Footer = () => {
                 <img src={logofooter} alt="logofooter" />
               </a>
               <p className="text-white font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl">
-                Volley is a one-stop-shop for decentralized finance, cross-chain swaps, staking, earning, and yield
-                farming on the Ethereum Blockchain.
+                Volley is a one-stop-shop for decentralized finance, cross-chain
+                swaps, staking, earning, and yield farming on the Ethereum
+                Blockchain.
               </p>
-              <div className="flex space-x-6">
+            </div>
+            <div className="md:pt-10 pt-8 basis-[494px]">
+              <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row">
+                <input
+                  type="text"
+                  placeholder="Email Address"
+                  className="sm:basis-60 placeholder:text-primarygray outline-none border  border-primarygreen text-primarygray placeholder:font-oswald font-oswald text-base block rounded-xl px-6 py-2"
+                />
+                <button className="sm:basis-32 text-white bg-primary border font-oswald border-primarygreen rounded-xl py-2 sm:py-0">
+                  SUBSCRIBE
+                </button>
+              </div>
+              <div className="flex space-x-6 pt-6">
                 <a href="/">
                   <img src={twitter} alt="twitter" />
                 </a>
@@ -26,21 +39,7 @@ const Footer = () => {
                   <img src={telegram} alt="telegram" />
                 </a>
               </div>
-              
             </div>
-            <div className="md:pt-10 pt-8 basis-[494px]">
-                <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row">
-                    <input
-                      type="text"
-                      placeholder="Email Address"
-                      className="sm:basis-60 placeholder:text-primarygray outline-none border  border-primarygreen text-primarygray placeholder:font-oswald font-oswald text-base block rounded-xl px-6 py-2"
-                    />
-                    <button className="sm:basis-32 text-white bg-primary border font-oswald border-primarygreen rounded-xl py-2 sm:py-0">
-                      SUBSCRIBE
-                    </button>
-                  </div>
-            </div>
-            
           </div>
         </div>
       </div>
@@ -76,7 +75,9 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <p className="text-[12px] font-semibold text-[#CCD5DF] lg:basis-[325px] text-left">© 2023 VOLLEY SWAP</p>
+            <p className="text-[12px] font-semibold text-[#CCD5DF] lg:basis-[325px] text-left">
+              © 2023 VOLLEY SWAP
+            </p>
           </div>
         </div>
       </div>
