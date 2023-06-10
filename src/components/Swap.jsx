@@ -153,7 +153,7 @@ const Swap = () => {
         <span>Connect Wallet</span>
       </button>
       <span className="font-poppins font-medium text-sm text-primary inline-block pt-3">Refferal:</span>
-      <div className="relative flex items-center border border-primarygreen rounded-xl px-3 py-[10px] space-x-3">
+      <div className="relative flex items-center border border-primarygreen rounded-xl px-3 py-[10px] space-x-3 mt-2 ">
         <input
           type="text"
           placeholder="Refferal"
