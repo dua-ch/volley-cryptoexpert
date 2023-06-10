@@ -6,6 +6,7 @@ import chevrondown from "../assets/icons/chevron-down.png";
 import chevronblackdown from "../assets/icons/chevron-black-down.png";
 import arrows from "../assets/imgs/arrows.png";
 import accountwallet from "../assets/imgs/account_balance_wallet.png";
+import copyimg from "../assets/imgs/copy-img.svg";
 
 const Swap = () => {
   const [Limit, setLimit] = useState(25);
@@ -113,12 +114,13 @@ const Swap = () => {
         <img src={accountwallet} alt="accountwallet" />
         <span>Connect Wallet</span>
       </button>
-      <div className="relative">
+      <span className="font-poppins  text-primary px-3 py-2 block mt-4">Refferal</span>
+      <div className="relative mt-1">
         <input
           type="text"
-          placeholder="Refferal"
-          className="inline-block mt-6 font-poppins  text-primary outline-none focus:border focus:border-primarygreen w-full px-3 py-2 rounded-xl border border-transparent placeholder:text-primary"
+          className="inline-block font-poppins  text-primary  border border-primarygreen w-full px-3 py-2 rounded-xl border  placeholder:text-primary"
         />
+        <img src={copyimg} alt="bannerimg" className="copyrefferal" id="copy"/>
       </div>
     </div>
   );
