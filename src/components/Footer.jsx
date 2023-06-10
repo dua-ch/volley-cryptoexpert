@@ -26,91 +26,21 @@ const Footer = () => {
                   <img src={telegram} alt="telegram" />
                 </a>
               </div>
-              <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row">
-                <input
-                  type="text"
-                  placeholder="Email Address"
-                  className="sm:basis-60 placeholder:text-primarygray outline-none border  border-primarygreen text-primarygray placeholder:font-oswald font-oswald text-base block rounded-xl px-6 py-2"
-                />
-                <button className="sm:basis-32 text-white bg-primary border font-oswald border-primarygreen rounded-xl py-2 sm:py-0">
-                  SUBSCRIBE
-                </button>
-              </div>
+              
             </div>
-            <div className="md:pt-10 pt-8 basis-[260px]">
-              <h3 className="font-poppins font-semibold text-white text-3xl">Marketplace</h3>
-              <ul className="flex flex-col mt-4 md:mt-7 space-y-2 md:space-y-5">
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    Explore
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    Articles
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    How it Works
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    Help
-                  </a>
-                </li>
-              </ul>
+            <div className="md:pt-10 pt-8 basis-[494px]">
+                <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row">
+                    <input
+                      type="text"
+                      placeholder="Email Address"
+                      className="sm:basis-60 placeholder:text-primarygray outline-none border  border-primarygreen text-primarygray placeholder:font-oswald font-oswald text-base block rounded-xl px-6 py-2"
+                    />
+                    <button className="sm:basis-32 text-white bg-primary border font-oswald border-primarygreen rounded-xl py-2 sm:py-0">
+                      SUBSCRIBE
+                    </button>
+                  </div>
             </div>
-            <div className="md:pt-10 pt-8 basis-[260px]">
-              <h3 className="font-poppins font-semibold text-white text-3xl">Links</h3>
-              <ul className="flex flex-col mt-4 md:mt-7 space-y-2 md:space-y-5">
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    Tokens
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    API
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    BOT
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="text-secondarygray font-poppins text-base font-normal leading-8 md:leading-10 md:text-xl"
-                  >
-                    Become Partners
-                  </a>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
       </div>
