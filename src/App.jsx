@@ -1,10 +1,13 @@
 import About from "./pages/About";
 import "./App.css";
+import AppProvider from "./context/AppContext";
 
 function App() {
   return (
     <>
-      <About />
+      <AppProvider>
+        <About />
+      </AppProvider>
     </>
   );
 }

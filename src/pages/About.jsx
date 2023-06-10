@@ -1,18 +1,24 @@
 import { useState } from "react";
+import { useToggle } from "../context/AppContext";
 import { tableData } from "../data/TableData";
+import { faqsData } from "../data/FaqsData";
 import Navbar from "../components/Navbar";
 import Swap from "../components/Swap";
 import Footer from "../components/Footer";
 import AboutAside from "../components/AboutAside";
 import AboutBanner from "../components/AboutBanner";
 import TableRows from "../components/TableRows";
-import detailicon from "../assets/icons/detail-icon.png";
 import Faqs from "../components/Faqs";
-import { faqsData } from "../data/FaqsData";
+import NFTSwiper from "../components/NFTSwiper";
+import ConnectWallet from "../components/ConnectWallet";
+import TokenModal from "../components/TokenModal";
+import detailicon from "../assets/icons/detail-icon.png";
 
 const About = () => {
   const [activeTab, setactiveTab] = useState("swap");
   const [tokenTab, settokenTab] = useState("ethereum");
+
+  const { tokenModal, tokenModal2, connectWallet, handlesettokenFrom, handlesettokenTo } = useToggle();
 
   return (
     <>
@@ -27,21 +33,21 @@ const About = () => {
 
               {/* Tabs  */}
               <div className="col-span-3 md:col-span-3 lg:col-span-2">
-                <div className="flex  text-primary border-b-2 border-primary">
+                <div className="flex text-primary border-b-2 border-primary">
                   <button className="basis-1/3 block text-center relative" onClick={() => setactiveTab("swap")}>
-                    <span className="font-oswald text-xl font-bold block py-3">SWAP</span>
+                    <span className="font-oswald text-lg font-bold block py-3 sm:text-xl">SWAP</span>
                     {activeTab === "swap" && (
                       <span className="block absolute bottom-0 w-full h-[3px] bg-primary"></span>
                     )}
                   </button>
                   <button className="basis-1/3 block text-center relative" onClick={() => setactiveTab("token")}>
-                    <span className="font-oswald text-xl font-bold block py-3">MY TOKEN</span>
+                    <span className="font-oswald text-lg font-bold block py-3 sm:text-xl">MY TOKEN</span>
                     {activeTab === "token" && (
                       <span className="block absolute bottom-0 w-full h-[3px] bg-primary transition-all ease-in-out"></span>
                     )}
                   </button>
                   <button className="basis-1/3 block text-center relative" onClick={() => setactiveTab("referal")}>
-                    <span className="font-oswald text-xl font-bold block py-3">REFFERAL</span>
+                    <span className="font-oswald text-lg font-bold block py-3 sm:text-xl">REFFERAL</span>
                     {activeTab === "referal" && (
                       <span className="block absolute bottom-0 w-full h-[3px] bg-primary"></span>
                     )}
@@ -55,8 +61,8 @@ const About = () => {
                     <button
                       className={
                         tokenTab === "bsc"
-                          ? "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl bg-primary mb-2 sm:mb-0 ml-2"
-                          : "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl mb-2 sm:mb-0 ml-2"
+                          ? "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl bg-primary mb-2 ml-2 sm:mb-0 sm:px-8"
+                          : "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl mb-2 ml-2 sm:mb-0 sm:px-8"
                       }
                       onClick={() => settokenTab("bsc")}
                     >
@@ -86,8 +92,8 @@ const About = () => {
                     <button
                       className={
                         tokenTab === "ethereum"
-                          ? "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl bg-primary mb-2 sm:mb-0 ml-2"
-                          : "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl mb-2 sm:mb-0 ml-2"
+                          ? "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl bg-primary mb-2 ml-2 sm:mb-0 sm:px-8"
+                          : "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl mb-2 ml-2 sm:mb-0 sm:px-8"
                       }
                       onClick={() => settokenTab("ethereum")}
                     >
@@ -138,8 +144,8 @@ const About = () => {
                     <button
                       className={
                         tokenTab === "polygone"
-                          ? "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl bg-primary mb-2 sm:mb-0 ml-2"
-                          : "flex items-center space-x-1 border-2 border-primarygreen px-8 py-[7px] rounded-3xl mb-2 sm:mb-0 ml-2"
+                          ? "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl bg-primary mb-2 ml-2 sm:mb-0 sm:px-8"
+                          : "flex items-center space-x-1 border-2 border-primarygreen px-3 py-[7px] rounded-3xl mb-2 ml-2 sm:mb-0 sm:px-8"
                       }
                       onClick={() => settokenTab("polygone")}
                     >
@@ -223,19 +229,34 @@ const About = () => {
               {/* Faq Section  */}
               <div className="col-span-3 lg:col-span-2 md:col-auto">
                 <div className="border-2 border-primary rounded-tr-2xl rounded-tl-2xl p-4 sm:p-6">
-                  <h3 className="font-poppins font-semibold text-primary text-4xl mb-2 ml-4">FAQs</h3>
+                  <h3 className="font-poppins font-semibold text-primary  mb-2 ml-4 text-2xl sm:text-4xl">FAQs</h3>
                   {faqsData.map((data) => {
                     return <Faqs key={data.title} {...data} />;
                   })}
                 </div>
               </div>
               {/* Faq Section  */}
-              <div className="bg-slider text-white col-span-3 md:col-span-3 lg:col-auto">4th col</div>
+              {/* Slider Section */}
+              <div className="col-span-3 md:col-span-3 lg:col-auto ">
+                <div className="text-white rounded-tr-2xl rounded-tl-2xl relative">
+                  <NFTSwiper />
+                </div>
+              </div>
+              {/* End Slider Section  */}
             </div>
           </div>
         </div>
       </div>
       <Footer />
+
+      {/* Connect Wallet Modal */}
+      {connectWallet && <ConnectWallet />}
+      {/* End Connect Wallet Modal  */}
+
+      {/* Token Modal  */}
+      {tokenModal && <TokenModal handleFrom={handlesettokenFrom} />}
+      {tokenModal2 && <TokenModal handleTo={handlesettokenTo} />}
+      {/* End Token Modal  */}
     </>
   );
 };

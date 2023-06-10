@@ -1,9 +1,13 @@
 import logo from "../assets/imgs/logo.png";
 import searchicon from "../assets/icons/search-icon.png";
 import { useState } from "react";
+import { useToggle } from "../context/AppContext";
 
 const Navbar = () => {
   const [showNav, setshowNav] = useState(false);
+
+  const { handleconnectWallet } = useToggle();
+
   return (
     <header className="bg-[#DAFFF2] py-4 md:py-0">
       <div className="max-w-[1300px] m-auto px-4 2xl:px-0">
@@ -42,7 +46,10 @@ const Navbar = () => {
               />
               <img src={searchicon} alt="searchicon" className="absolute top-[14px] md:left-4 left-2 w-4" />
             </div>
-            <button className="bg-primary text-white font-oswald font-bold text-base py-[7px] px-8 rounded-3xl md:basis-48">
+            <button
+              className="bg-primary text-white font-oswald font-bold text-base py-[7px] px-8 rounded-3xl md:basis-48"
+              onClick={handleconnectWallet}
+            >
               Connect
             </button>
             <button className="block md:hidden" onClick={() => setshowNav(!showNav)}>

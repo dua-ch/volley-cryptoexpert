@@ -37,7 +37,7 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-            <div className="pt-10 basis-[260px]">
+            <div className="md:pt-10 pt-8 basis-[260px]">
               <h3 className="font-poppins font-semibold text-white text-3xl">Marketplace</h3>
               <ul className="flex flex-col mt-4 md:mt-7 space-y-2 md:space-y-5">
                 <li>
@@ -74,7 +74,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="pt-10 basis-[260px]">
+            <div className="md:pt-10 pt-8 basis-[260px]">
               <h3 className="font-poppins font-semibold text-white text-3xl">Links</h3>
               <ul className="flex flex-col mt-4 md:mt-7 space-y-2 md:space-y-5">
                 <li>

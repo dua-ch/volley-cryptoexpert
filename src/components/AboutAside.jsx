@@ -3,8 +3,7 @@ import { useState } from "react";
 const AboutAside = () => {
   const [activeTab, setactiveTab] = useState("swap");
   return (
-    // <div className="border-2 border-primarygreen  flex justify-around items-center py-8  rounded-2xl mb-4 xl:mt-0 xl:flex-col xl:justify-center xl:space-y-6 xl:basis-44">
-    <div className="border-2 border-primarygreen flex justify-between items-center py-5 px-4 rounded-2xl sm:space-x-6 mb-4 lg:mb-0 lg:flex-col sm:justify-around sm:py-8  lg:justify-center lg:space-y-6 lg:space-x-0">
+    <div className="lg:sticky lg:top-4 border-2 border-primarygreen flex justify-between items-center py-5 px-4 rounded-2xl sm:space-x-6 mb-4 lg:mb-0 lg:flex-col sm:justify-around sm:py-8  lg:justify-center lg:space-y-6 lg:space-x-0">
       <button
         className={
           activeTab === "swap"
