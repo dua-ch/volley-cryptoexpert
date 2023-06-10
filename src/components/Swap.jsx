@@ -40,7 +40,7 @@ const Swap = () => {
           <button className="text-primary font-medium text-[12px]">Limit</button>
           <button
             className={
-              Limit > 0 || Limit === 25
+              Limit === 25
                 ? "inline-block py-[2px] px-[4px] bg-primary text-[6px] font-bold text-white rounded-md border border-transparent"
                 : "inline-block py-[2px] px-[4px] bg-white text-[6px] font-bold text-primary rounded-md border border-[#ccccc]"
             }
@@ -50,7 +50,7 @@ const Swap = () => {
           </button>
           <button
             className={
-              Limit > 25 || Limit === 50
+              Limit === 50
                 ? "inline-block py-[2px] px-[4px] bg-primary text-[6px] font-bold text-white rounded-md border border-transparent"
                 : "inline-block py-[2px] px-[4px] bg-white text-[6px] font-bold text-primary rounded-md border border-[#ccccc]"
             }
@@ -60,7 +60,7 @@ const Swap = () => {
           </button>
           <button
             className={
-              Limit > 50 || Limit === 75
+              Limit === 75
                 ? "inline-block py-[2px] px-[4px] bg-primary text-[6px] font-bold text-white rounded-md border border-transparent"
                 : "inline-block py-[2px] px-[4px] bg-white text-[6px] font-bold text-primary rounded-md border border-[#ccccc]"
             }
@@ -70,7 +70,7 @@ const Swap = () => {
           </button>
           <button
             className={
-              Limit > 75 || Limit === 100
+              Limit === 100
                 ? "inline-block py-[2px] px-[4px] bg-primary text-[6px] font-bold text-white rounded-md border border-transparent"
                 : "inline-block py-[2px] px-[4px] bg-white text-[6px] font-bold text-primary rounded-md border border-[#ccccc]"
             }
@@ -97,11 +97,15 @@ const Swap = () => {
             >
               {Dropdown.map((items) => {
                 return (
-                  <li key={items.id} className="hover:bg-slate-200" onClick={() => setselectItem(items.token)}>
+                  <li
+                    key={items.id}
+                    className={selectItem === items.token ? "hover:bg-slate-200 bg-slate-300" : "hover:bg-slate-200"}
+                    onClick={() => setselectItem(items.token)}
+                  >
                     <button className="flex items-center justify-between  py-[4px] px-2 lg:px-3 w-full">
                       <div className="flex items-center">
                         <img src={items.token_icon} alt={items.token_icon} />
-                        <span className="font-oswald font-semibold text-[12px] inline-block pl-1  text-primary">
+                        <span className={"font-oswald font-semibold text-[12px] inline-block pl-1  text-primary"}>
                           {items.token}
                         </span>
                       </div>
@@ -117,7 +121,7 @@ const Swap = () => {
         <span className="text-[#757575] text-[10px] font-poppins font-normal inline-block leading-3 absolute top-2 left-3">
           From
         </span>
-        <input type="text" className="outline-none border-none bg-transparent font-poppins w-2/3 lg:w-9/12" />
+        <input type="text" className="font-roboto outline-none border-none bg-transparent w-2/3 lg:w-9/12" />
         <button className="font-poppins flex items-center justify-between" onClick={handletokenModal}>
           <div className="flex items-center ">
             <img src={tokenFrom.tokenImg} alt={tokenFrom.tokenImg} className="mr-1 h-4 w-4" />
@@ -135,7 +139,7 @@ const Swap = () => {
         <span className="text-[#757575] text-[10px] font-poppins font-normal inline-block leading-3 absolute top-2 left-3">
           To
         </span>
-        <input type="text" className="outline-none border-none bg-transparent font-poppins w-2/3 lg:w-9/12" />
+        <input type="text" className="font-roboto outline-none border-none bg-transparent w-2/3 lg:w-9/12" />
         <button className="font-poppins flex items-center justify-between" onClick={handletokenModal2}>
           <div className="flex items-center ">
             <img src={tokenTo.tokenImg} alt={tokenTo.token} className="mr-1 h-4 w-4" />
@@ -153,7 +157,7 @@ const Swap = () => {
         <span>Connect Wallet</span>
       </button>
       <span className="font-poppins font-medium text-sm text-primary inline-block pt-3">Refferal:</span>
-      <div className="relative flex items-center border border-primarygreen rounded-xl px-3 py-[10px] space-x-3 mt-2 ">
+      <div className="relative flex items-center border border-primarygreen rounded-xl px-3 py-[10px] space-x-3">
         <input
           type="text"
           placeholder="Refferal"

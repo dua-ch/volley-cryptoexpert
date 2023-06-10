@@ -96,8 +96,3 @@
 .myScrollbar::-webkit-scrollbar-thumb:hover {
   background: #4f018b;
 }
-
-button.bg-primary:hover{
-  background: linear-gradient(180deg,#4f018b 0%,#019962 100%)
- }
- 
