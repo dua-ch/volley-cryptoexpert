@@ -99,3 +99,31 @@
 button.bg-primary:hover{
   background: linear-gradient(180deg,#4f018b 0%,#019962 100%)
  }
+
+ .connect-btn-wrap {
+  position: relative;
+ }
+
+ .connect-btn-wrap button{
+  width: 100%;
+ }
+
+ .connect-btn-wrap ul {
+  border-radius: 10px
+ }
+ 
+ .connect-btn-wrap ul li:hover button{
+ background: linear-gradient(180deg,#4f018b 0%,#019962 100%);
+ }
+
+ .connect-btn-wrap ul li button img{
+  width:18px;
+  margin-right: 5px
+ }
+
+ @media (max-width:767px){
+  .connect-btn-wrap ul li button img {
+    width: 12px;
+    margin-right: 3px;
+}
+ }

@@ -2,12 +2,13 @@ import logo from "../assets/imgs/logo.png";
 import searchicon from "../assets/icons/search-icon.png";
 import { useState } from "react";
 import { useToggle } from "../context/AppContext";
+import { Dropconnect } from "../data/Dropconnect";
 
 const Navbar = () => {
   const [showNav, setshowNav] = useState(false);
 
-  const { handleconnectWallet } = useToggle();
-
+  const [selectToken, setselectToken] = useState(false);
+  const [selectItem, setselectItem] = useState("Ethereum");
   return (
     <header className="bg-[#DAFFF2] py-4 md:py-0">
       <div className="max-w-[1300px] m-auto px-4 2xl:px-0">
@@ -46,12 +47,40 @@ const Navbar = () => {
               />
               <img src={searchicon} alt="searchicon" className="absolute top-[14px] md:left-4 left-2 w-4" />
             </div>
+
+            <div className="connect-btn-wrap md:basis-48">
             <button
               className="bg-primary text-white font-oswald font-bold text-base py-[7px] px-8 rounded-3xl md:basis-48"
-              onClick={handleconnectWallet}
+              onClick={() => setselectToken(!selectToken)}
             >
               Connect
             </button>
+            {selectToken && (
+            <ul
+              className="absolute z-20 overflow-hidden bg-primary w-[100%] rounded-bl-lg rounded-br-lg"
+              onClick={() => setselectToken(false)}
+            >
+              {Dropconnect.map((items) => {
+                return (
+                  <li
+                    key={items.id}
+                    className={selectItem === items.token ? "bg-slate-300" : ""}
+                  >
+                    <button className="flex items-center justify-between  py-[10px] px-2 lg:px-3 w-full">
+                      <div className="flex">
+                        <img src={items.token_icon} alt={items.token_icon} />
+                        <span className={"font-oswald font-semibold text-[12px] inline-block pl-1  text-white"}>
+                          {items.token}
+                        </span>
+                      </div>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+
+          )}
+          </div>
             <button className="block md:hidden" onClick={() => setshowNav(!showNav)}>
               {showNav === true ? (
                 <svg
